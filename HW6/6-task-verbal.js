@@ -74,19 +74,6 @@ function decide_response(user_said) {
   return response;
 }
 
-/* Load and print voices */
-function printVoices() {
-  // Fetch the available voices.
-  var voices = speechSynthesis.getVoices();
-  
-  // Loop through each of the voices.
-  voices.forEach(function(voice, i) {
-        console.log(voice.name)
-  });
-}
-
-printVoices();
-
 /* 
  *speak out some text 
  */
@@ -95,16 +82,9 @@ function speak(text, callback) {
   /* Nonverbal actions at the start of robot's speaking */
   setBreathInc(fastBreathInc); 
 
-  console.log("Voices: ")
-  printVoices();
-
   var u = new SpeechSynthesisUtterance();
   u.text = text;
   u.lang = 'en-US';
-  u.volume = 0.5 //between 0.1
-  u.pitch = 2.0 //between 0 and 2
-  u.rate = 1.0 //between 0.1 and 5-ish
-  u.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == "Google US English"; })[0]; //pick a voice
 
   u.onend = function () {
       

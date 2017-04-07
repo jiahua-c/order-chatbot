@@ -18,7 +18,7 @@ function startDictation() {
     recognition.continuous = false;
     recognition.interimResults = false;
 
-    recognition.lang = "en-US";
+    recognition.lang = "zh-yue";
     recognition.start();
 
 
@@ -51,25 +51,25 @@ function startDictation() {
  */
 function decide_response(user_said) {
   var response;
-  var order_re = /order\s(.+)/i;  // creating a regular expression
+  var order_re = /我要\s(.+)/i;  // creating a regular expression
   var order_parse_array = user_said.match(order_re) // parsing the input string with the regular expression
   
   console.log(order_parse_array) // let's print the array content to the console log so we understand 
                                 // what's inside the array.
 
   if (order_parse_array && state === "initial") {
-    response = "ok, " + order_parse_array[1];
+    response = "明白, " + order_parse_array[1];
   } else if (user_said.toLowerCase().includes("order") && state === "initial") {
-    response = "what would you like to order";
+    response = "你仲有咩需要";
     state = "order"
-  } else if (user_said.toLowerCase().includes("finish")) {
-    response = "Thank you for your order";
+  } else if (user_said.toLowerCase().includes("完成")) {
+    response = "歡迎你下次光臨";
     state = "initial"
   } else if (state === "order") {
-    response = "ok, " + user_said;
+    response = "明白, " + user_said;
     state = "initial"
   } else {
-    response = "sorry i don't get it";
+    response = "唔好意思，我唔明白";
   }
   return response;
 }
@@ -100,11 +100,11 @@ function speak(text, callback) {
 
   var u = new SpeechSynthesisUtterance();
   u.text = text;
-  u.lang = 'en-US';
+  u.lang = 'zh-yue';
   u.volume = 0.5 //between 0.1
   u.pitch = 2.0 //between 0 and 2
   u.rate = 1.0 //between 0.1 and 5-ish
-  u.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == "Google US English"; })[0]; //pick a voice
+  u.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == "Google 粵語 (香港)"; })[0]; //pick a voice
 
   u.onend = function () {
       

@@ -14,7 +14,7 @@ function startDictation() {
     /* Nonverbal actions at the start of listening */
     setTimeBetweenBlinks(fastTimeBetweenBlinks);
     setBreathInc(slowBreathInc);
-    setEyeColor("red");
+
     recognition.continuous = false;
     recognition.interimResults = false;
 
@@ -51,25 +51,25 @@ function startDictation() {
  */
 function decide_response(user_said) {
   var response;
-  var order_re = /order\s(.+)/i;  // creating a regular expression
-  var order_parse_array = user_said.match(order_re) // parsing the input string with the regular expression
+  var play_re = /play\s(.+)/i;  // creating a regular expression
+  var play_parse_array = user_said.match(play_re) // parsing the input string with the regular expression
   
-  console.log(order_parse_array) // let's print the array content to the console log so we understand 
+  console.log(play_parse_array) // let's print the array content to the console log so we understand 
                                 // what's inside the array.
 
-  if (order_parse_array && state === "initial") {
-    response = "ok, " + order_parse_array[1];
-  } else if (user_said.toLowerCase().includes("order") && state === "initial") {
-    response = "what would you like to order";
-    state = "order"
-  } else if (user_said.toLowerCase().includes("finish")) {
-    response = "Thank you for your order";
+  if (play_parse_array && state === "initial") {
+    response = "ok, playing " + play_parse_array[1];
+  } else if (user_said.toLowerCase().includes("play") && state === "initial") {
+    response = "Play who?";
+    state = "play_song"
+  } else if (user_said.toLowerCase().includes("bye")) {
+    response = "good bye to you!";
     state = "initial"
-  } else if (state === "order") {
-    response = "ok, " + user_said;
+  } else if (state === "play_song") {
+    response = "ok, playing " + user_said;
     state = "initial"
   } else {
-    response = "sorry i don't get it";
+    response = "i don't get it";
   }
   return response;
 }
@@ -104,7 +104,7 @@ function speak(text, callback) {
   u.volume = 0.5 //between 0.1
   u.pitch = 2.0 //between 0 and 2
   u.rate = 1.0 //between 0.1 and 5-ish
-  u.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == "Google US English"; })[0]; //pick a voice
+  u.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == "Karen"; })[0]; //pick a voice
 
   u.onend = function () {
       

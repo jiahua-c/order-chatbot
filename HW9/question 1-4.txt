@@ -1,0 +1,14 @@
+Assignment 9
+reading
+
+1. What is "culture"?
+Culture is the characteristics and knowledge of a particular group of people, defined by everything from language, religion, cuisine, social habits, music and arts, etc.
+
+2. Why is it useful to express culture?
+As it is said in the paper: The role of cultural sameness of interactors has beenproved to be as important as psychological matching, particularly in terms ofpersuasion. That is to say, a high intelligent level of cultural expression can play an important role in close the distance to specific culture background people. When cultural expression is applied to chatbot characters, the ethnically matched characters and perceived the characters’ arguments to be better than those of theethnically divergent agents. It is very useful in helping to build connections and smooth the processes in a multicultural society.
+
+3. How can an agent express culture?
+I found this paragraph which can describe the answer very well: When an agent expresses culture, it requires not only changing the language, but redesigning the interface's appearance, content, and interactive behaviors that could be considered inappropriate for that country (Miller, Kozu, Davis, 2001), adapting a character to a different culture involves careful reconsideration of each of the ten key characteristics identified earlier. These characteristics - identity, backstory, appearance, content of speech, manner of speaking, manner of gesturing, emotional dynamics, social interaction patterns, role and role dynamics - both define and are defined by each character's unique idiosyncratic behaviors and signature personality traits, as well as by the character's cultural grounding. Even as each human personality is unique, each culture tends to evoke specific modes of adjustment and reactions in different situations.
+
+4. Many of you have characters that are not human-like (a cat, a burger, etc.) Would you consider them expressing some culture? If yes, why and how would you do that. If no, then why not?
+My character is a order chatbot with a hamburger outlook. Suppose it is a character for a specific fast food company selling burgers, similar to McDonald’s. When it is applied to different countries’ drive thru system around the world, it is worthy to consider about expressing culture. It is obvious this characters can switch to some other languages so that it can communicate in different countries. Although burger is originally from the US, it has become a kind of world known food, and there are plenty of burger restaurants all over the world. In a marketing perspective, making my character more fun and cultural related could be a good way to attract people in different places, such as costume this hamburger character with typical traditional clothes according to holidays and areas. 
